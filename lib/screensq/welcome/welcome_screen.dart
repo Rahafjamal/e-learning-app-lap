@@ -36,9 +36,8 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                   Spacer(), // 1/6
-                  InkWell(
-                    onTap: () => Get.to(QuizScreen()),
-                    child: Container(
+
+                  Container(
                       width: double.infinity,
                       alignment: Alignment.center,
                       padding: EdgeInsets.all(kDefaultPadding * 0.75), // 15
@@ -46,15 +45,23 @@ class WelcomeScreen extends StatelessWidget {
                         gradient: kPrimaryGradient,
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                       ),
-                      child: Text(
-                        "Lets Start Quiz",
-                        style: Theme.of(context)
-                            .textTheme
-                            .button!
-                            .copyWith(color: Colors.black),
-                      ),
-                    ),
-                  ),
+                      child: ElevatedButton(
+                        onPressed: (() {
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return QuizScreen();
+                            },
+                          );
+                        }),
+                        child: Text(
+                          "Lets Start Quiz",
+                          style: Theme.of(context)
+                              .textTheme
+                              .button!
+                              .copyWith(color: Colors.black),
+                        ),
+                      )),
+
                   Spacer(flex: 2), // it will take 2/6 spaces
                 ],
               ),

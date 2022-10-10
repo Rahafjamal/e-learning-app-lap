@@ -118,8 +118,14 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                   TabBar(
                     controller: _tabController,
                     tabs: const [
-                      Text("   "),
-                      Text("   "),
+                      Text(
+                        " 1  ",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      Text(
+                        " 2 ",
+                        style: TextStyle(color: Colors.black),
+                      ),
                     ],
                   ),
                   const SizedBox(
